@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random word generator</title>
+</head>
+<body>
+  <div id="rand" class="rand">
+    <p>ashwin</p>
+    <label>Enter the missing letter</label>
+    <input type="text" id="txt">
+    <button onclick="getrandomword()" type="submit">Click me</button>
+    <button onclick="check()" type="submit">check</button>
+  </div>
+  <script>
+    let randomwords = ["b_nana", "ora_ge", "gra_es", "pin_apple"];
+    let x;
+
+    function rand() {
+      x = Math.floor(Math.random() * randomwords.length);
+      return randomwords[x];
+    }
+
+    function getrandomword() {
+      let randword = document.getElementById("rand");
+      randword.querySelector('p').innerText = rand();
+    }
+
+    function check() {
+      var text = document.getElementById("txt").value;
+      if (randomwords[x] == "pin_apple") {
+        if (text == "e") {
+          window.alert("You are correct!");
+        } else {
+          window.alert("You are incorrect!");
+        }
+      } else if (randomwords[x] == "b_nana") {
+        if (text == "a") {
+          window.alert("You are correct!");
+        } else {
+          window.alert("You are incorrect!");
+        }
+      } else if (randomwords[x] == "ora_ge") {
+        if (text == "n") {
+          window.alert("You are correct!");
+        } else {
+          window.alert("You are incorrect!");
+        }
+      } else if (randomwords[x] == "gra_es") {
+        if (text == "p") {
+          window.alert("You are correct!");
+        } else {
+          window.alert("You are incorrect!");
+        }
+      }
+    }
+  </script>
+</body>
+</html>
